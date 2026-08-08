@@ -1,0 +1,6 @@
+sources:
+  - name: Project
+    database: PROJECT
+    tables:
+      - name: BIKE
+      - name: WEATHER
