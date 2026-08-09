@@ -13,5 +13,5 @@ Daily_weather_agg AS(
     group by date,weather
     Qualify ROW_NUMBER() OVER (PARTITION BY date ORDER BY count(weather)desc)=1
 )
-Select*from Daily_weather_agg
+ Select*from Daily_weather_agg
 
