@@ -1,6 +1,7 @@
 sources:
   - name: Project
     database: PROJECT
+    schema: PROJECT_SCHEMA
     tables:
       - name: BIKE
       - name: WEATHER
