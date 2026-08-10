@@ -1,7 +1,19 @@
-WITH BIKE AS (
-    select distinct START_STATIO_ID as station_id,START_STATION_NAME,
-    round(START_LAT,2) as START_LAT,round(START_LNG,2) as START_LNG
-from {{ source('Project', 'BIKE') }}
-WHERE RIDE_ID !='ride_id'
+WITH BIKE as (
+
+select
+distinct
+START_STATIO_ID AS station_id,
+start_station_name as station_name,
+START_LAT as station_lat,
+START_LNG as start_station_lng
+
+from {{ ref('Stg_bike') }}
+
+where RIDE_ID != '"bikeid"'
+
+
 )
-select * from BIKE
+
+select
+*
+from BIKE
